@@ -12,7 +12,9 @@ module.exports = {
         accent: "#F2EF88",
         tomato: {
           primary: "#FA854F",
+          light: "#FFEDDF"
         },
+
       },
     },
   },

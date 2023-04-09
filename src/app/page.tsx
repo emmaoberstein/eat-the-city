@@ -18,7 +18,7 @@ export default function Home() {
         <main className="flex flex-col items-center justify-between">
           <Image src={squirrel} alt="Cute squirrel" />
           <Sizer height={32} />
-          <Link href={"#"} className="text-white text-3xl transition">
+          <Link href={"/browse"} className="text-white text-3xl transition">
             Explore crawls
             <div className="w-full h-1 bg-accent" />
           </Link>
