@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className={"px-16 py-8 bg-tomato-primary min-h-screen " + inter.className}>
-        <h1 className="text-4xl uppercase tracking-wide text-title">Eat The City</h1>
+        <h1 className="text-4xl uppercase tracking-wide text-title text-center md:text-left">Eat The City</h1>
         <Sizer height={64} />
         <main className="flex flex-col items-center justify-between">
           <Image src={squirrel} alt="Cute squirrel" />
