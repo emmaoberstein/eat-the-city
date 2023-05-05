@@ -1,12 +1,9 @@
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import SearchBar from "./searchbar";
+import { Sizer } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
-
-function Sizer({ height = 0, width = 0 }) {
-  return <div style={{ height, width }} />;
-}
 
 export default function Browse() {
   return (
@@ -16,7 +13,6 @@ export default function Browse() {
       >
         <main className="flex flex-col items-center justify-between">
           <Sizer height={32} />
-          <SearchBar placeholder={"Search by neighborhood or cuisine"} />
         </main>
       </div>
     </>
