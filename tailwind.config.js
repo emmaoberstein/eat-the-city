@@ -11,10 +11,10 @@ module.exports = {
         title: "hsla(58, 80%, 91%, 1)",
         accent: "#F2EF88",
         tomato: {
-          primary: "#FA854F",
-          light: "#FFEDDF"
+          primary: "#2D83AE",
+          light: "#D1EEFC"
         },
-        foreground: '#FAF9D6'
+        foreground: '#FFFFFF'
       },
     },
   },

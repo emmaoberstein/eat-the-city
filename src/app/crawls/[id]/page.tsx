@@ -1,56 +1,9 @@
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import { Sizer } from "@/components";
+import { Crawl, Stop, crawlData, CrawlImage } from "../crawls";
 
 const inter = Inter({ subsets: ["latin"] });
-
-type CrawlId = number;
-interface Crawl {
-  name: string;
-  author: string;
-  stops: Stop[];
-  overview: string;
-}
-
-interface Stop {
-  name: string;
-  description: string;
-  image: string;
-}
-
-const data: { [id: CrawlId]: Crawl } = {
-  1: {
-    name: "Jackson Heights - Around The World",
-    author: "Jemma Oberfried",
-    overview:
-      "Check out this wonderful tour, you'll love it. Bring all your friends. Awesome.",
-    stops: [
-      {
-        name: "Triple Decker Diner",
-        description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-        image: "",
-      },
-      {
-        name: "Two Decker Diner",
-        description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-        image: "",
-      },
-      {
-        name: "Single Decker Diner",
-        description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-        image: "",
-      },
-      {
-        name: "Welcome End",
-        description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-        image: "",
-      },
-    ],
-  },
-};
 
 function Header({ crawl }: { crawl: Crawl }) {
   return (
@@ -63,12 +16,31 @@ function Header({ crawl }: { crawl: Crawl }) {
   );
 }
 export default function Crawl({ params }: any) {
-  const crawl = data[params.id];
+  const crawl = crawlData[params.id];
+
   function StopSection({ stop }: { stop: Stop }) {
     return (
       <div className="flex flex-col gap-2">
-        <span className="text-bold text-xl">{stop.name}</span>
+        <h1 className="font-bold text-2xl">
+          <a id={stop.name}>{stop.name}</a>
+        </h1>
         <span>{stop.description}</span>
+        {stop.images?.map((crawlImage: CrawlImage, i: number) => {
+          return (
+            <div key={i} className="py-2">
+              <Image
+                src={crawlImage.image}
+                alt={crawlImage.alt}
+                className="object-contain w-3/4 mx-auto overflow-hidden rounded-md"
+              />
+              {crawlImage.caption && (
+                <div className="text-center w-3/4 mx-auto italic text-gray-700 text-sm">
+                  {crawlImage.caption}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -76,21 +48,25 @@ export default function Crawl({ params }: any) {
     <div className={"flex flex-col min-h-screen " + inter.className}>
       <Header crawl={crawl} />
       <main className="flex flex-grow px-6 py-8 bg-tomato-light gap-8">
-        <aside className="w-[150px] flex flex-col p-4">
-          <ul className="flex flex-col gap-2">
+        <aside className="hidden md:block sticky top-0 p-8 max-h-screen">
+          <ul className="flex flex-col gap-2 w-max">
             <li key={0} className="text-[#0D48DE]">
-              Overview
+              <a href="#Overview">Overview</a>
             </li>
             {crawl.stops.map((stop, i) => (
               <li key={i + 1} className="text-[#0D48DE]">
-                {stop.name}
+                <a href={"#" + stop.name}>{stop.name}</a>
               </li>
             ))}
           </ul>
         </aside>
         <section className="flex flex-col flex-grow bg-white p-4 gap-8 rounded-md">
           <StopSection
-            stop={{ name: "Overview", description: crawl.overview, image: "" }}
+            stop={{
+              name: "Overview",
+              description: crawl.overview,
+              images: crawl.mapImage ? [crawl.mapImage] : [],
+            }}
           />
           {crawl.stops.map((stop, i) => (
             <StopSection key={i} stop={stop} />
