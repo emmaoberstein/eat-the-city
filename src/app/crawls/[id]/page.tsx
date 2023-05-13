@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { Sizer } from "@/components";
-import { Crawl, Stop, CrawlData, CrawlImage } from "../crawls";
+import { Crawl, Stop, crawlData, CrawlImage } from "../crawls";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +16,7 @@ function Header({ crawl }: { crawl: Crawl }) {
   );
 }
 export default function Crawl({ params }: any) {
-  const crawl = CrawlData[params.id];
+  const crawl = crawlData[params.id];
 
   function StopSection({ stop }: { stop: Stop }) {
     return (
@@ -25,24 +25,22 @@ export default function Crawl({ params }: any) {
           <a id={stop.name}>{stop.name}</a>
         </h1>
         <span>{stop.description}</span>
-        {stop &&
-          stop.images &&
-          stop.images.map((item: CrawlImage, i: number) => {
-            return (
-              <div key={i} className="py-2">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  className="object-contain w-3/4 mx-auto overflow-hidden rounded-md"
-                />
-                {item.caption && (
-                  <div className="text-center w-3/4 mx-auto italic text-gray-700 text-sm">
-                    {item.caption}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        {stop.images?.map((crawlImage: CrawlImage, i: number) => {
+          return (
+            <div key={i} className="py-2">
+              <Image
+                src={crawlImage.image}
+                alt={crawlImage.alt}
+                className="object-contain w-3/4 mx-auto overflow-hidden rounded-md"
+              />
+              {crawlImage.caption && (
+                <div className="text-center w-3/4 mx-auto italic text-gray-700 text-sm">
+                  {crawlImage.caption}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     );
   }

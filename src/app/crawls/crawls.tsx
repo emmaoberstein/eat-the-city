@@ -15,7 +15,6 @@ export interface Stop {
   name: string;
   description: string;
   images?: CrawlImage[];
-  imageAlt?: string;
 }
 
 export interface CrawlImage {
@@ -24,7 +23,7 @@ export interface CrawlImage {
   caption?: string;
 }
 
-export const CrawlData: { [id: CrawlId]: Crawl } = {
+export const crawlData: { [id: CrawlId]: Crawl } = {
   1: {
     name: "Jackson Heights - Around The World",
     author: "Jemma Oberfried",
