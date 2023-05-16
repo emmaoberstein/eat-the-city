@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import SearchBar from "./searchbar";
 import { Sizer } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,6 +13,9 @@ export default function Browse() {
         <main className="flex flex-col items-center justify-between">
           <Sizer height={32} />
         </main>
+        <Link href={"/crawls/1"} className="text-blue-600 dark:text-blue-500 hover:underline">
+        Jackson Heights - Around The World
+          </Link>
       </div>
     </>
   );
