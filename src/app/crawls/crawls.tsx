@@ -1,5 +1,13 @@
 import { StaticImageData } from "next/image";
 import map1 from "@/app/images/crawls/1/map.png";
+import fuskahouse from "@/app/images/crawls/1/fuskahouse.jpg";
+import fuskahouse_cart from "@/app/images/crawls/1/fuskahouse_cart.jpg";
+import lhasa from "@/app/images/crawls/1/lhasa.jpg";
+import arepa from "@/app/images/crawls/1/arepa.jpg";
+import lanueva from "@/app/images/crawls/1/lanueva.jpg";
+import mariscos from "@/app/images/crawls/1/mariscos.jpg";
+import louies from "@/app/images/crawls/1/louies.jpg";
+import nepali from "@/app/images/crawls/1/nepali.jpg";
 
 export type CrawlId = number;
 
@@ -28,60 +36,95 @@ export const crawlData: { [id: CrawlId]: Crawl } = {
     name: "Jackson Heights - Around The World",
     author: "Jemma Oberfried",
     overview:
-      "Discover the diverse food scene of Jackson Heights on our food crawl. This neighborhood has a variety of tasty international dishes. You can try Indian street food and delicious Latin American treats. The prices are reasonable, and the flavors are fantastic. Join us as we explore the lively streets of Jackson Heights and enjoy delicious food from around the world.",
-    mapImage: {
+      "For our first 'Eat the City' food crawl, we went to Jackson Heights in Queens, one of the most culturally diverse neighborhoods in New York. The food scene here reflects that diversity, with plenty of reasonably priced and delicious options for South Asian, Southeast Asian, South American, and Mexican dishes within less than a mile from each other! ",
+      mapImage: {
       image: map1,
-      alt: "A map",
-      caption: "A map",
+      alt: "A map of our food crawl",
+      caption: "A map of our food crawl",
     },
     stops: [
       {
         name: "Fuskahouse_NYC",
-        description:
-          "Discover the diverse food scene of Jackson Heights on our food crawl. This neighborhood has a variety of tasty international dishes. You can try Indian street food and delicious Latin American treats. The prices are reasonable, and the flavors are fantastic. Join us as we explore the lively streets of Jackson Heights and enjoy delicious food from around the world.",
+        description:  "The first stop on our crawl, Fuskahouse_NYC is a food cart that speicalizes in Bangladeshi street food. Fuska (also spelled fuchka or phuchka) are deep-fried potato balls seasoned with aromatic spices, offering a satisfying crispy outside and a creamy inside. Topped with tangy tamarind sauce, onions, potato, and shredded boiled eggs, each bite is packed with flavor.",
         images: [
           {
-            image: map1,
-            alt: "A map",
-            caption: "A map",
+            image: fuskahouse_cart,
+            alt: "The Fuska house cart",
+            caption: "The Fuska house cart",
           },
           {
-            image: map1,
-            alt: "A map",
-            caption: "A map",
+            image: fuskahouse,
+            alt: "Fuska",
+            caption: "Fuska dish",
           },
         ],
       },
       {
         name: "Lhasa Fast Food",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-      },
+          "Next, we headed to Lhasa Fast Food ",
+          images: [
+          {
+            image: lhasa,
+            alt: "Lhasa Fast Food"
+          }
+        ]
+        },
       {
         name: "Arepa Lady",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
+          "",
+          images: [
+            {
+              image: arepa,
+              alt: "Arepa"
+            }
+          ]
       },
       {
         name: "La Nueva Bakery",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-      },
+          "",
+          images: [
+            {
+              image: lanueva,
+              alt: "La Nueva"
+            }
+          ]
+        },
       {
         name: "Mariscos El Submarino",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-      },
+          "",
+          images: [
+            {
+              image: mariscos,
+              alt: "La Nueva"
+            }
+          ]
+        },
       {
         name: "Louie's",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-      },
+          "",
+          images: [
+            {
+              image: louies,
+              alt: "La Nueva"
+            }
+          ]
+        },
       {
         name: "Nepali Bhanchha Ghar",
         description:
-          "Triple Deck Diner is a classic American diner located in the heart of downtown. As the name suggests, the diner is famous for its triple-decker sandwiches, piled high with layers of fresh ingredients. A must-try is their signature Triple Decker Club, with roasted turkey, crispy bacon, lettuce, and tomato, served on your choice of bread with a side of fries. In addition to sandwiches, Triple Deck Diner also serves up classic diner fare like burgers, hot dogs, and milkshakes. Don't forget to save room for dessert - their homemade pies are legendary! Triple Deck Diner is a quintessential American diner experience that's not to be missed on your food crawl through downtown.",
-      },
+          "",
+          images: [
+            {
+              image: nepali,
+              alt: "La Nueva"
+            }
+          ]
+        },
     ],
   },
 };

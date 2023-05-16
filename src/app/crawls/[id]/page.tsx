@@ -31,7 +31,7 @@ export default function Crawl({ params }: any) {
               <Image
                 src={crawlImage.image}
                 alt={crawlImage.alt}
-                className="object-contain w-3/4 mx-auto overflow-hidden rounded-md"
+                className="object-contain  max-h-96 w-3/4 mx-auto overflow-hidden rounded-md"
               />
               {crawlImage.caption && (
                 <div className="text-center w-3/4 mx-auto italic text-gray-700 text-sm">
