@@ -12,7 +12,6 @@ import louies from '@/app/images/crawls/1/louies.jpg';
 import nepali from '@/app/images/crawls/1/nepali.jpg';
 
 const images: any = {
-	fuskahouse,
 	'1/fuskahouse_cart.jpg': fuskahouse_cart,
 	'1/fuskahouse.jpg': fuskahouse,
 	'1/map.png': map1,
