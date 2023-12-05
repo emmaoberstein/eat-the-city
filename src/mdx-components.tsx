@@ -20,7 +20,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 				<>
 					<span className="flex flex-col w-full  mx-auto p-4">
 						<Image
-							src={`/../public/images/crawls/${src}`}
+							src={`/images/crawls/${src}`}
 							alt={alt!}
 							className="object-contain overflow-hidden rounded-md"
 							width={500}
