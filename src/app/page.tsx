@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { Logo, Sizer } from '@/components';
@@ -10,7 +9,7 @@ export default function Home() {
 		<>
 			<div
 				className={
-					'px-16 py-8 bg-tomato-primary min-h-screen ' + inter.className
+					'px-16 py-8 bg-blue-primary min-h-screen ' + inter.className
 				}>
 				<h1 className="text-4xl uppercase tracking-wide text-title text-center md:text-left">
 					Eat The City

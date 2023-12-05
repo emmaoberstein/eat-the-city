@@ -6,7 +6,7 @@ module.exports = {
 			colors: {
 				title: 'hsla(58, 80%, 91%, 1)',
 				accent: '#F2EF88',
-				tomato: {
+				blue: {
 					primary: '#2D83AE',
 					light: '#EBF8FF',
 				},
