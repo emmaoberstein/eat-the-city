@@ -27,7 +27,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 							height={500}
 						/>
 						{title && (
-							<span className="text-center italic text-gray-700 text-sm w-max-500">
+							<span className="text-center italic text-gray-700 text-sm max-w-[500px]">
 								{title}
 							</span>
 						)}
