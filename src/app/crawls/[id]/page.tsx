@@ -3,6 +3,8 @@ import { Sizer } from '@/components';
 import { CrawlMeta } from '@/global-types';
 import type { MDXContent } from 'mdx/types';
 import crawl1, { meta as meta1 } from '../markdown/1.mdx';
+import crawl2, { meta as meta2 } from '../markdown/2.mdx';
+import crawl3, { meta as meta3 } from '../markdown/3.mdx';
 
 type CrawlId = number;
 
@@ -10,6 +12,8 @@ const markdownCrawls: {
 	[id: CrawlId]: { content: MDXContent; meta: CrawlMeta };
 } = {
 	1: { content: crawl1, meta: meta1 },
+	2: { content: crawl2, meta: meta2 },
+	3: { content: crawl3, meta: meta3 },
 };
 
 const inter = Inter({ subsets: ['latin'] });
