@@ -19,6 +19,22 @@ export default function Browse() {
 					className="text-blue-600 dark:text-blue-500 hover:underline">
 					Jackson Heights - Around The World
 				</Link>
+				<main className="flex flex-col items-center justify-between">
+					<Sizer height={8} />
+				</main>
+				<Link
+					href={'/crawls/2'}
+					className="text-blue-600 dark:text-blue-500 hover:underline">
+					Astoria
+				</Link>
+				<main className="flex flex-col items-center justify-between">
+					<Sizer height={8} />
+				</main>
+				<Link
+					href={'/crawls/3'}
+					className="text-blue-600 dark:text-blue-500 hover:underline">
+					Flushing
+				</Link>
 			</div>
 		</>
 	);
