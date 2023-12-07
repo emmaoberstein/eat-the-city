@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 						<Image
 							src={`/images/crawls/${src}`}
 							alt={alt!}
-							className="object-contain overflow-hidden rounded-md"
+							className="object-contain overflow-hidden rounded-md mx-auto"
 							width={500}
 							height={500}
 						/>
