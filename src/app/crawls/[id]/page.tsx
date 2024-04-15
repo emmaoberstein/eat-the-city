@@ -6,6 +6,7 @@ import Link from 'next/link';
 import crawl1, { meta as meta1 } from '../markdown/1.mdx';
 import crawl2, { meta as meta2 } from '../markdown/2.mdx';
 import crawl3, { meta as meta3 } from '../markdown/3.mdx';
+import crawl4, { meta as meta4 } from '../markdown/4.mdx';
 
 type CrawlId = number;
 
@@ -15,6 +16,7 @@ const markdownCrawls: {
 	1: { content: crawl1, meta: meta1 },
 	2: { content: crawl2, meta: meta2 },
 	3: { content: crawl3, meta: meta3 },
+	4: { content: crawl4, meta: meta4 },
 };
 
 const inter = Inter({ subsets: ['latin'] });
